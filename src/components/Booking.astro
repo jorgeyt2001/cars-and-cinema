@@ -1,0 +1,380 @@
+---
+---
+
+<section id="reservar" class="py-12 sm:py-16 lg:py-20 w-full flex justify-center">
+  <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="inline-block px-4 sm:px-6 py-2 glass rounded-full text-[#d4af37] font-semibold text-xs sm:text-sm tracking-wider mb-4">
+        PROCESO SIMPLE
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 gradient-text px-4" style="font-family: var(--font-heading);">
+        RESERVA TU EXPERIENCIA
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-white/70 max-w-2xl mx-auto px-4">
+        En solo 3 pasos, estarás listo para vivir la experiencia de conducir un coche de ensueño.
+      </p>
+    </div>
+
+    <div class="glass-enhanced rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 gradient-border-animated scanner smooth-appear">
+      <form id="booking-form" class="space-y-6 sm:space-y-8">
+        <!-- Step 1: Selección del vehículo -->
+        <div class="form-section">
+          <h3 class="text-xl sm:text-2xl font-bold text-[#d4af37] mb-4 sm:mb-6" style="font-family: var(--font-heading);">
+            1. SELECCIONA TU VEHÍCULO
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Categoría</label>
+              <select class="custom-select w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base" style="color: white; background-color: rgba(10, 10, 10, 0.9);">
+                <option value="" style="background-color: #000; color: #fff;">Selecciona una categoría</option>
+                <option value="ferrari" style="background-color: #000; color: #fff;">Ferrari</option>
+                <option value="lamborghini" style="background-color: #000; color: #fff;">Lamborghini</option>
+                <option value="porsche" style="background-color: #000; color: #fff;">Porsche</option>
+                <option value="aston-martin" style="background-color: #000; color: #fff;">Aston Martin</option>
+                <option value="otros" style="background-color: #000; color: #fff;">Otros</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Modelo</label>
+              <select class="custom-select w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base" style="color: white; background-color: rgba(10, 10, 10, 0.9);">
+                <option value="" style="background-color: #000; color: #fff;">Selecciona un modelo</option>
+                <option value="huracan" style="background-color: #000; color: #fff;">Lamborghini Huracán EVO</option>
+                <option value="488" style="background-color: #000; color: #fff;">Ferrari 488 GTB</option>
+                <option value="aventador" style="background-color: #000; color: #fff;">Lamborghini Aventador SVJ</option>
+                <option value="gtr" style="background-color: #000; color: #fff;">Nissan GT-R Nismo</option>
+                <option value="911" style="background-color: #000; color: #fff;">Porsche 911 Turbo S</option>
+                <option value="db11" style="background-color: #000; color: #fff;">Aston Martin DB11</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Fechas y ubicación -->
+        <div class="form-section">
+          <h3 class="text-xl sm:text-2xl font-bold text-[#d4af37] mb-4 sm:mb-6" style="font-family: var(--font-heading);">
+            2. FECHAS Y UBICACIÓN
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Fecha de recogida</label>
+              <input
+                type="date"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Hora de recogida</label>
+              <input
+                type="time"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Fecha de devolución</label>
+              <input
+                type="date"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Hora de devolución</label>
+              <input
+                type="time"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Ubicación de recogida</label>
+              <select class="custom-select w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base" style="color: white; background-color: rgba(10, 10, 10, 0.9);">
+                <option value="" style="background-color: #000; color: #fff;">Selecciona una ubicación</option>
+                <option value="madrid" style="background-color: #000; color: #fff;">Madrid - Centro</option>
+                <option value="barcelona" style="background-color: #000; color: #fff;">Barcelona - Puerto</option>
+                <option value="marbella" style="background-color: #000; color: #fff;">Marbella - Puerto Banús</option>
+                <option value="valencia" style="background-color: #000; color: #fff;">Valencia - Centro</option>
+                <option value="ibiza" style="background-color: #000; color: #fff;">Ibiza - Aeropuerto</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Información personal -->
+        <div class="form-section">
+          <h3 class="text-xl sm:text-2xl font-bold text-[#d4af37] mb-4 sm:mb-6" style="font-family: var(--font-heading);">
+            3. TUS DATOS
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Nombre completo</label>
+              <input
+                type="text"
+                placeholder="Juan Pérez"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Email</label>
+              <input
+                type="email"
+                placeholder="tu@email.com"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Teléfono</label>
+              <input
+                type="tel"
+                placeholder="+34 600 000 000"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Número de licencia</label>
+              <input
+                type="text"
+                placeholder="12345678A"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth text-sm sm:text-base"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-white/80 mb-2 font-semibold text-sm sm:text-base">Comentarios adicionales (opcional)</label>
+              <textarea
+                rows="4"
+                placeholder="¿Alguna solicitud especial?"
+                class="w-full px-3 sm:px-4 py-3 sm:py-4 glass rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition-smooth resize-none text-sm sm:text-base"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extras -->
+        <div class="form-section">
+          <h3 class="text-xl sm:text-2xl font-bold text-[#d4af37] mb-4 sm:mb-6" style="font-family: var(--font-heading);">
+            EXTRAS (OPCIONAL)
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <label class="flex items-center space-x-3 glass p-4 rounded-lg cursor-pointer hover:border-[#d4af37] border border-transparent transition-smooth">
+              <input type="checkbox" class="w-5 h-5 text-[#d4af37] rounded" />
+              <div>
+                <div class="text-white font-semibold">Seguro Premium</div>
+                <div class="text-white/60 text-sm">+€50/día</div>
+              </div>
+            </label>
+            <label class="flex items-center space-x-3 glass p-4 rounded-lg cursor-pointer hover:border-[#d4af37] border border-transparent transition-smooth">
+              <input type="checkbox" class="w-5 h-5 text-[#d4af37] rounded" />
+              <div>
+                <div class="text-white font-semibold">GPS Navegación</div>
+                <div class="text-white/60 text-sm">+€10/día</div>
+              </div>
+            </label>
+            <label class="flex items-center space-x-3 glass p-4 rounded-lg cursor-pointer hover:border-[#d4af37] border border-transparent transition-smooth">
+              <input type="checkbox" class="w-5 h-5 text-[#d4af37] rounded" />
+              <div>
+                <div class="text-white font-semibold">Conductor Adicional</div>
+                <div class="text-white/60 text-sm">+€30/día</div>
+              </div>
+            </label>
+            <label class="flex items-center space-x-3 glass p-4 rounded-lg cursor-pointer hover:border-[#d4af37] border border-transparent transition-smooth">
+              <input type="checkbox" class="w-5 h-5 text-[#d4af37] rounded" />
+              <div>
+                <div class="text-white font-semibold">Entrega a Domicilio</div>
+                <div class="text-white/60 text-sm">+€100</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="text-center pt-6">
+          <button
+            type="submit"
+            class="px-12 py-6 bg-[#d4af37] text-black font-bold rounded-lg text-xl hover:bg-white transition-smooth hover-lift neon-border"
+          >
+            CONFIRMAR RESERVA
+          </button>
+          <p class="text-white/60 text-sm mt-4">
+            Al reservar, aceptas nuestros términos y condiciones
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('booking-form') as HTMLFormElement;
+
+    // Form validation
+    const validateForm = () => {
+      const formData = new FormData(form);
+      const errors: string[] = [];
+
+      // Get all form fields
+      const categoria = form.querySelector('select[name="categoria"]') as HTMLSelectElement;
+      const modelo = form.querySelector('select[name="modelo"]') as HTMLSelectElement;
+      const fechaRecogida = form.querySelector('input[name="fecha-recogida"]') as HTMLInputElement;
+      const horaRecogida = form.querySelector('input[name="hora-recogida"]') as HTMLInputElement;
+      const fechaDevolucion = form.querySelector('input[name="fecha-devolucion"]') as HTMLInputElement;
+      const horaDevolucion = form.querySelector('input[name="hora-devolucion"]') as HTMLInputElement;
+      const ubicacion = form.querySelector('select[name="ubicacion"]') as HTMLSelectElement;
+      const nombre = form.querySelector('input[name="nombre"]') as HTMLInputElement;
+      const email = form.querySelector('input[name="email"]') as HTMLInputElement;
+      const telefono = form.querySelector('input[name="telefono"]') as HTMLInputElement;
+      const licencia = form.querySelector('input[name="licencia"]') as HTMLInputElement;
+
+      // Validate vehicle selection
+      if (!categoria || !categoria.value) errors.push('Selecciona una categoría de vehículo');
+      if (!modelo || !modelo.value) errors.push('Selecciona un modelo de vehículo');
+
+      // Validate dates
+      if (!fechaRecogida || !fechaRecogida.value) errors.push('Selecciona una fecha de recogida');
+      if (!horaRecogida || !horaRecogida.value) errors.push('Selecciona una hora de recogida');
+      if (!fechaDevolucion || !fechaDevolucion.value) errors.push('Selecciona una fecha de devolución');
+      if (!horaDevolucion || !horaDevolucion.value) errors.push('Selecciona una hora de devolución');
+
+      // Validate dates logic
+      if (fechaRecogida?.value && fechaDevolucion?.value) {
+        const recogida = new Date(fechaRecogida.value + 'T' + (horaRecogida?.value || '00:00'));
+        const devolucion = new Date(fechaDevolucion.value + 'T' + (horaDevolucion?.value || '00:00'));
+        const hoy = new Date();
+        hoy.setHours(0, 0, 0, 0);
+
+        if (recogida < hoy) errors.push('La fecha de recogida no puede ser anterior a hoy');
+        if (devolucion <= recogida) errors.push('La fecha de devolución debe ser posterior a la recogida');
+      }
+
+      if (!ubicacion || !ubicacion.value) errors.push('Selecciona una ubicación de recogida');
+
+      // Validate personal data
+      if (!nombre || !nombre.value.trim()) errors.push('Introduce tu nombre completo');
+      if (!email || !email.value.trim()) {
+        errors.push('Introduce tu email');
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        errors.push('Introduce un email válido');
+      }
+      if (!telefono || !telefono.value.trim()) errors.push('Introduce tu teléfono');
+      if (!licencia || !licencia.value.trim()) errors.push('Introduce tu número de licencia');
+
+      return errors;
+    };
+
+    // Show error message
+    const showError = (message: string) => {
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'fixed top-8 left-1/2 transform -translate-x-1/2 glass p-4 rounded-lg border-2 border-red-500 z-50 max-w-md animate-shake';
+      errorDiv.innerHTML = `
+        <div class="flex items-center space-x-3">
+          <svg class="w-6 h-6 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-white text-sm">${message}</p>
+        </div>
+      `;
+      document.body.appendChild(errorDiv);
+      setTimeout(() => errorDiv.remove(), 3000);
+    };
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate form
+      const errors = validateForm();
+      if (errors.length > 0) {
+        errors.forEach((error, index) => {
+          setTimeout(() => showError(error), index * 500);
+        });
+        return;
+      }
+
+      // Show loading
+      const loadingDiv = document.createElement('div');
+      loadingDiv.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center';
+      loadingDiv.innerHTML = `
+        <div class="glass p-8 rounded-2xl text-center">
+          <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#d4af37] mx-auto mb-4"></div>
+          <p class="text-white text-lg">Procesando tu reserva...</p>
+        </div>
+      `;
+      document.body.appendChild(loadingDiv);
+
+      // Simulate API call
+      setTimeout(() => {
+        loadingDiv.remove();
+
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center';
+        successMessage.innerHTML = `
+          <div class="glass p-8 rounded-2xl neon-border text-center max-w-md mx-4 animate-fade-in-scale">
+            <div class="text-6xl mb-4">✓</div>
+            <h3 class="text-2xl font-bold text-[#d4af37] mb-4">¡Reserva Confirmada!</h3>
+            <p class="text-white/80 mb-6">Recibirás un email de confirmación en breve con todos los detalles de tu reserva.</p>
+            <button class="close-modal px-6 py-3 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white transition-smooth">
+              Cerrar
+            </button>
+          </div>
+        `;
+        document.body.appendChild(successMessage);
+
+        // Close modal button
+        successMessage.querySelector('.close-modal')?.addEventListener('click', () => {
+          successMessage.remove();
+        });
+
+        // Reset form
+        form.reset();
+      }, 1500);
+    });
+
+    // Add name attributes to form fields for validation
+    setTimeout(() => {
+      const fields = [
+        { selector: 'select', name: 'categoria', index: 0 },
+        { selector: 'select', name: 'modelo', index: 1 },
+        { selector: 'input[type="date"]', name: 'fecha-recogida', index: 0 },
+        { selector: 'input[type="time"]', name: 'hora-recogida', index: 0 },
+        { selector: 'input[type="date"]', name: 'fecha-devolucion', index: 1 },
+        { selector: 'input[type="time"]', name: 'hora-devolucion', index: 1 },
+        { selector: 'select', name: 'ubicacion', index: 2 },
+        { selector: 'input[type="text"]', name: 'nombre', index: 0 },
+        { selector: 'input[type="email"]', name: 'email', index: 0 },
+        { selector: 'input[type="tel"]', name: 'telefono', index: 0 },
+        { selector: 'input[type="text"]', name: 'licencia', index: 1 },
+      ];
+
+      fields.forEach(field => {
+        const elements = form.querySelectorAll(field.selector);
+        if (elements[field.index]) {
+          elements[field.index].setAttribute('name', field.name);
+        }
+      });
+    }, 100);
+  });
+</script>
+
+<style>
+  @keyframes shake {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-50%) translateY(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(-50%) translateY(5px); }
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.3s ease-out;
+  }
+</style>

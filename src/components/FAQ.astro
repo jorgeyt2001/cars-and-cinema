@@ -1,0 +1,153 @@
+---
+const faqs = [
+  {
+    question: '¿Qué requisitos necesito para alquilar un coche de lujo?',
+    answer: 'Necesitas tener al menos 25 años, una licencia de conducir válida con más de 2 años de antigüedad, un documento de identidad vigente y una tarjeta de crédito a tu nombre para el depósito de seguridad.'
+  },
+  {
+    question: '¿Cuál es el proceso de reserva?',
+    answer: 'El proceso es muy simple: selecciona tu vehículo, elige las fechas y ubicación, completa tus datos personales y confirma la reserva. Recibirás un email de confirmación con todos los detalles. Puedes reservar online o contactarnos directamente para asistencia personalizada.'
+  },
+  {
+    question: '¿Está incluido el seguro en el precio?',
+    answer: 'Sí, todos nuestros vehículos incluyen seguro básico a todo riesgo. También ofrecemos opciones de seguro premium con cobertura extendida y franquicia reducida por un coste adicional.'
+  },
+  {
+    question: '¿Puedo conducir el coche fuera de España?',
+    answer: 'Sí, permitimos la conducción en países de la Unión Europea. Debes informarnos con antelación sobre tu intención de cruzar fronteras y pueden aplicarse cargos adicionales según el destino.'
+  },
+  {
+    question: '¿Qué pasa si tengo un problema durante el alquiler?',
+    answer: 'Ofrecemos asistencia 24/7 durante todo el período de alquiler. Ante cualquier incidencia, contacta inmediatamente con nuestro servicio de emergencias. Contamos con vehículos de sustitución y servicio de grúa en toda España.'
+  },
+  {
+    question: '¿Puedo cancelar o modificar mi reserva?',
+    answer: 'Puedes cancelar o modificar tu reserva con hasta 48 horas de antelación sin coste alguno. Las cancelaciones con menos de 48 horas de antelación pueden estar sujetas a cargos según nuestra política de cancelación.'
+  },
+  {
+    question: '¿Ofrecen servicio de entrega a domicilio?',
+    answer: 'Sí, ofrecemos servicio de entrega y recogida a domicilio en las principales ciudades españolas por un cargo adicional. También contamos con servicio de entrega en aeropuertos y hoteles de lujo.'
+  },
+  {
+    question: '¿Qué incluye el kilometraje?',
+    answer: 'Nuestros alquileres incluyen kilometraje ilimitado en territorio español. Para trayectos internacionales, aplicamos límites específicos según el país de destino que se especificarán en tu contrato.'
+  }
+];
+---
+
+<section id="faq" class="py-12 sm:py-16 lg:py-20 w-full flex justify-center">
+  <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="inline-block px-4 sm:px-6 py-2 glass rounded-full text-[#d4af37] font-semibold text-xs sm:text-sm tracking-wider mb-4">
+        AYUDA Y SOPORTE
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 gradient-text px-4" style="font-family: var(--font-heading);">
+        PREGUNTAS FRECUENTES
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-white/70 max-w-2xl mx-auto px-4">
+        Encuentra respuestas rápidas a las preguntas más comunes sobre nuestro servicio de alquiler de coches de lujo.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="glass rounded-xl overflow-hidden faq-item opacity-0 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s;`}>
+          <button
+            class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-smooth"
+            data-faq-index={index}
+          >
+            <h3 class="text-white font-bold text-base sm:text-lg pr-4">{faq.question}</h3>
+            <div class="flex-shrink-0">
+              <svg class="w-6 h-6 text-[#d4af37] transform transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 pt-2">
+              <p class="text-white/70 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-12 sm:mt-16 text-center glass p-8 rounded-2xl neon-border">
+      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4" style="font-family: var(--font-heading);">
+        ¿Aún tienes dudas?
+      </h3>
+      <p class="text-white/70 mb-6 text-sm sm:text-base">
+        Nuestro equipo está disponible 24/7 para ayudarte con cualquier consulta.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:+34900123456"
+          class="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white transition-smooth"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          <span>Llamar Ahora</span>
+        </a>
+        <a
+          href="mailto:info@carsandcinema.com"
+          class="inline-flex items-center justify-center space-x-2 px-6 py-3 glass border-2 border-[#d4af37] text-white font-bold rounded-lg hover:bg-[#d4af37] hover:text-black transition-smooth"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          <span>Enviar Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqButtons = document.querySelectorAll('.faq-question');
+
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.closest('.faq-item');
+        const wasActive = faqItem?.classList.contains('active');
+
+        // Close all FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // Toggle the clicked FAQ if it wasn't active
+        if (!wasActive && faqItem) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+  });
+</script>

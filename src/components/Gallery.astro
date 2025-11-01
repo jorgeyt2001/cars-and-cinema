@@ -1,0 +1,233 @@
+---
+const galleryImages = [
+  {
+    url: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop',
+    title: 'Ferrari en Acción',
+    category: 'ferrari'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&auto=format&fit=crop',
+    title: 'Lamborghini Elegante',
+    category: 'lamborghini'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop',
+    title: 'Porsche Perfección',
+    category: 'porsche'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&auto=format&fit=crop',
+    title: 'Aston Martin Clásico',
+    category: 'aston'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop',
+    title: 'BMW Deportivo',
+    category: 'bmw'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1617531653520-bd466c5d2333?w=800&auto=format&fit=crop',
+    title: 'Mercedes Lujo',
+    category: 'mercedes'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&auto=format&fit=crop',
+    title: 'Conducción Nocturna',
+    category: 'lifestyle'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f1f2e?w=800&auto=format&fit=crop',
+    title: 'Detalles Premium',
+    category: 'details'
+  }
+];
+---
+
+<section id="galeria" class="py-12 sm:py-16 lg:py-20 w-full flex justify-center">
+  <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="inline-block px-4 sm:px-6 py-2 glass rounded-full text-[#d4af37] font-semibold text-xs sm:text-sm tracking-wider mb-4">
+        GALERÍA EXCLUSIVA
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 gradient-text px-4" style="font-family: var(--font-heading);">
+        NUESTROS VEHÍCULOS
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-white/70 max-w-2xl mx-auto px-4">
+        Explora nuestra exclusiva colección de vehículos de lujo a través de imágenes de alta calidad.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      {galleryImages.map((image, index) => (
+        <div 
+          class="gallery-item relative overflow-hidden rounded-xl cursor-pointer group opacity-0 animate-fade-in-up"
+          style={`animation-delay: ${index * 0.1}s;`}
+          data-index={index}
+        >
+          <div class="aspect-square overflow-hidden">
+            <img
+              src={image.url}
+              alt={image.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <h3 class="text-white font-bold text-lg mb-1">{image.title}</h3>
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                <span class="text-white/80 text-sm">Ver imagen</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zoom icon -->
+          <div class="absolute top-4 right-4 w-10 h-10 glass rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <svg class="w-5 h-5 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- View all CTA -->
+    <div class="text-center mt-12">
+      <button
+        id="view-all-btn"
+        class="px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white transition-smooth hover-lift"
+      >
+        VER TODAS LAS FOTOS
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4">
+  <button id="close-lightbox" class="absolute top-6 right-6 w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-[#d4af37] transition-smooth group z-10">
+    <svg class="w-6 h-6 text-white group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <button id="prev-image" class="absolute left-6 w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-[#d4af37] transition-smooth group z-10">
+    <svg class="w-6 h-6 text-white group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <button id="next-image" class="absolute right-6 w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-[#d4af37] transition-smooth group z-10">
+    <svg class="w-6 h-6 text-white group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <div class="max-w-5xl w-full">
+    <img id="lightbox-image" src="" alt="" class="w-full h-auto rounded-lg shadow-2xl" />
+    <div class="text-center mt-6">
+      <h3 id="lightbox-title" class="text-2xl font-bold text-white mb-2" style="font-family: var(--font-heading);"></h3>
+      <p id="lightbox-counter" class="text-white/60"></p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  #lightbox.active {
+    display: flex;
+  }
+</style>
+
+<script define:vars={{ galleryImages }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const closeLightbox = document.getElementById('close-lightbox');
+    const prevImage = document.getElementById('prev-image');
+    const nextImage = document.getElementById('next-image');
+    
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+      currentIndex = index;
+      const image = galleryImages[index];
+      if (lightboxImage && lightboxTitle && lightboxCounter) {
+        lightboxImage.src = image.url;
+        lightboxImage.alt = image.title;
+        lightboxTitle.textContent = image.title;
+        lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
+      }
+    };
+
+    const openLightbox = (index) => {
+      showImage(index);
+      lightbox?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightboxFn = () => {
+      lightbox?.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Gallery items click
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(index));
+    });
+
+    // Close lightbox
+    closeLightbox?.addEventListener('click', closeLightboxFn);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightboxFn();
+    });
+
+    // Navigation
+    prevImage?.addEventListener('click', () => {
+      const newIndex = currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1;
+      showImage(newIndex);
+    });
+
+    nextImage?.addEventListener('click', () => {
+      const newIndex = currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0;
+      showImage(newIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox?.classList.contains('active')) return;
+
+      if (e.key === 'Escape') closeLightboxFn();
+      if (e.key === 'ArrowLeft') prevImage?.click();
+      if (e.key === 'ArrowRight') nextImage?.click();
+    });
+
+    // View all button
+    document.getElementById('view-all-btn')?.addEventListener('click', () => {
+      openLightbox(0);
+    });
+  });
+</script>

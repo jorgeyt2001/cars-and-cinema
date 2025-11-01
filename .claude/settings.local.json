@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx astro add:*)",
+      "Bash(npm run dev:*)",
+      "Bash(New-Item -ItemType File -Path \"src/components/Testimonials.astro\" -Force)",
+      "Bash(ngrok version:*)",
+      "Bash(npx localtunnel --port 4323)",
+      "Bash(timeout 3 echo:*)",
+      "Bash(ssh:*)",
+      "Bash(npx:*)",
+      "Bash(C:UsersorantAppDataLocalnpm-cache_npx8a26fc3a61fe4212node_modulescloudflaredbincloudflared.exe tunnel --url http://localhost:4321)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

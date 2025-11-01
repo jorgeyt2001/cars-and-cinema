@@ -1,0 +1,116 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 glass-enhanced transition-smooth backdrop-blur-xl border-b border-[#d4af37]/20 w-full flex justify-center">
+  <nav class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 sm:space-x-3 group">
+        <div class="relative">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#d4af37]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+          </svg>
+          <div class="absolute inset-0 blur-xl bg-[#d4af37] opacity-50 group-hover:opacity-75 transition-opacity"></div>
+        </div>
+        <span class="text-lg sm:text-xl lg:text-2xl font-bold gradient-text whitespace-nowrap" style="font-family: var(--font-heading);">CARS & CINEMA</span>
+      </a>
+
+      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+        <a href="/" class="text-white/80 hover:text-[#d4af37] transition-smooth font-medium text-sm xl:text-base">Inicio</a>
+        <a href="#flota" class="text-white/80 hover:text-[#d4af37] transition-smooth font-medium text-sm xl:text-base">Flota</a>
+        <a href="#servicios" class="text-white/80 hover:text-[#d4af37] transition-smooth font-medium text-sm xl:text-base">Servicios</a>
+        <a href="#testimonios" class="text-white/80 hover:text-[#d4af37] transition-smooth font-medium text-sm xl:text-base">Testimonios</a>
+        <a href="#faq" class="text-white/80 hover:text-[#d4af37] transition-smooth font-medium text-sm xl:text-base">FAQ</a>
+        <a
+          href="#reservar"
+          class="px-4 xl:px-6 py-2 xl:py-3 gradient-border-animated rounded-lg font-bold text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-smooth text-sm xl:text-base magnetic-button glow-gold"
+        >
+          RESERVAR AHORA
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="lg:hidden text-white relative z-50 p-2">
+        <svg id="menu-icon" class="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-7 h-7 sm:w-8 sm:h-8 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu - Fullscreen Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl lg:hidden transform translate-x-full transition-transform duration-500 ease-in-out">
+      <div class="flex flex-col items-center justify-center h-full space-y-6 px-6">
+        <a href="/" class="text-white/90 hover:text-[#d4af37] transition-smooth font-bold text-2xl sm:text-3xl mobile-menu-link">Inicio</a>
+        <a href="#flota" class="text-white/90 hover:text-[#d4af37] transition-smooth font-bold text-2xl sm:text-3xl mobile-menu-link">Flota</a>
+        <a href="#servicios" class="text-white/90 hover:text-[#d4af37] transition-smooth font-bold text-2xl sm:text-3xl mobile-menu-link">Servicios</a>
+        <a href="#testimonios" class="text-white/90 hover:text-[#d4af37] transition-smooth font-bold text-2xl sm:text-3xl mobile-menu-link">Testimonios</a>
+        <a href="#faq" class="text-white/90 hover:text-[#d4af37] transition-smooth font-bold text-2xl sm:text-3xl mobile-menu-link">FAQ</a>
+        <a
+          href="#reservar"
+          class="px-10 py-4 neon-border rounded-lg font-bold text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-smooth text-xl sm:text-2xl mt-6 mobile-menu-link"
+        >
+          RESERVAR AHORA
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .mobile-menu-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .mobile-menu-link:nth-child(1) { animation-delay: 0.1s; }
+  .mobile-menu-link:nth-child(2) { animation-delay: 0.2s; }
+  .mobile-menu-link:nth-child(3) { animation-delay: 0.3s; }
+  .mobile-menu-link:nth-child(4) { animation-delay: 0.4s; }
+  .mobile-menu-link:nth-child(5) { animation-delay: 0.5s; }
+  .mobile-menu-link:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileMenu?.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        mobileMenu?.classList.add('translate-x-full');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu?.classList.remove('translate-x-full');
+        menuIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // Close menu when clicking on a link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('translate-x-full');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+    });
+  });
+</script>
