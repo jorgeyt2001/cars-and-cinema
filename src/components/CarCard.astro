@@ -15,7 +15,7 @@ interface Props {
 const { name, brand, price, image, specs, featured = false } = Astro.props;
 ---
 
-<div class={`car-card glass-enhanced rounded-2xl overflow-hidden transition-smooth group tilt-3d scanner pulse-ring ${featured ? 'gradient-border-animated' : ''}`}>
+<div class={`car-card glass-enhanced rounded-2xl overflow-hidden transition-smooth group tilt-3d scanner pulse-ring transform-3d-extreme energy-shield neon-lines hexagon-bg ${featured ? 'gradient-border-animated holographic-border' : ''}`}>
   <div class="relative overflow-hidden h-52 sm:h-56 md:h-64">
     <img
       src={image}

@@ -57,11 +57,11 @@ const galleryImages = [
       </p>
     </div>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery Grid - ULTRA FUTURISTIC -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
       {galleryImages.map((image, index) => (
-        <div 
-          class="gallery-item relative overflow-hidden rounded-xl cursor-pointer group opacity-0 animate-fade-in-up"
+        <div
+          class="gallery-item relative overflow-hidden rounded-xl cursor-pointer group opacity-0 animate-fade-in-up glass transform-3d-extreme energy-shield neon-lines float-animation hexagon-bg"
           style={`animation-delay: ${index * 0.1}s;`}
           data-index={index}
         >
@@ -87,9 +87,9 @@ const galleryImages = [
             </div>
           </div>
 
-          <!-- Zoom icon -->
-          <div class="absolute top-4 right-4 w-10 h-10 glass rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <svg class="w-5 h-5 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Zoom icon - ULTRA FUTURISTIC -->
+          <div class="absolute top-4 right-4 w-10 h-10 glass rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 warp-speed">
+            <svg class="w-5 h-5 text-[#d4af37] neon-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
             </svg>
           </div>
@@ -97,11 +97,11 @@ const galleryImages = [
       ))}
     </div>
 
-    <!-- View all CTA -->
+    <!-- View all CTA - ULTRA FUTURISTIC -->
     <div class="text-center mt-12">
       <button
         id="view-all-btn"
-        class="px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white transition-smooth hover-lift"
+        class="px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white transition-smooth hover-lift neon-border energy-shield"
       >
         VER TODAS LAS FOTOS
       </button>
@@ -109,8 +109,8 @@ const galleryImages = [
   </div>
 </section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4">
+<!-- Lightbox Modal - ULTRA FUTURISTIC -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 holographic-border">
   <button id="close-lightbox" class="absolute top-6 right-6 w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-[#d4af37] transition-smooth group z-10">
     <svg class="w-6 h-6 text-white group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -130,9 +130,9 @@ const galleryImages = [
   </button>
 
   <div class="max-w-5xl w-full">
-    <img id="lightbox-image" src="" alt="" class="w-full h-auto rounded-lg shadow-2xl" />
+    <img id="lightbox-image" src="" alt="" class="w-full h-auto rounded-lg shadow-2xl neon-border energy-shield" />
     <div class="text-center mt-6">
-      <h3 id="lightbox-title" class="text-2xl font-bold text-white mb-2" style="font-family: var(--font-heading);"></h3>
+      <h3 id="lightbox-title" class="text-2xl font-bold text-white mb-2 chromatic" style="font-family: var(--font-heading);"></h3>
       <p id="lightbox-counter" class="text-white/60"></p>
     </div>
   </div>

@@ -59,21 +59,21 @@ const services = [
       </p>
     </div>
 
-    <!-- Services Grid -->
+    <!-- Services Grid - ULTRA FUTURISTIC -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {services.map((service, index) => (
-        <div 
-          class="glass rounded-2xl p-6 sm:p-8 hover-lift transition-smooth group opacity-0 animate-fade-in-up"
-          style={`animation-delay: ${index * 0.1}s;`}
+        <div
+          class="glass rounded-2xl p-6 sm:p-8 hover-lift transition-smooth group opacity-0 animate-fade-in-up transform-3d-extreme energy-shield neon-lines float-animation hexagon-bg"
+          style={`animation-delay: ${index * 0.1 + 0.${index}}s;`}
         >
           <!-- Icon -->
-          <div class="w-14 h-14 sm:w-16 sm:h-16 glass rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 glass rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden warp-speed">
             <div class="absolute inset-0 bg-gradient-to-br from-[#d4af37]/20 to-transparent"></div>
-            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-[#d4af37] relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={service.icon} />
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-[#d4af37] relative z-10 neon-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={service.icon} />
           </div>
 
           <!-- Title -->
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3" style="font-family: var(--font-heading);">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 chromatic" style="font-family: var(--font-heading);">
             {service.title}
           </h3>
 
