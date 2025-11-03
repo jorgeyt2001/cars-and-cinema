@@ -19,7 +19,8 @@
       "Bash(git remote add:*)",
       "Bash(git push:*)",
       "Bash(echo:*)",
-      "Bash(\"C:\\Users\\orant\\Desktop\\pagina-web-astro-alquiler\\src\\styles\\global.css\")"
+      "Bash(\"C:\\Users\\orant\\Desktop\\pagina-web-astro-alquiler\\src\\styles\\global.css\")",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

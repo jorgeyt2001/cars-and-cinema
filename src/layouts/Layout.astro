@@ -248,7 +248,7 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
       </div>
     </div>
 
-    <canvas id="particles" class="fixed inset-0 z-0" style="opacity: 0.6;"></canvas>
+    <canvas id="particles" class="fixed inset-0 z-0 pointer-events-none" style="opacity: 0.3;"></canvas>
     <div class="relative z-10 w-full">
       <slot />
     </div>
@@ -303,11 +303,11 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
 
         // Hide on load or after max timeout
         window.addEventListener('load', () => {
-          setTimeout(hideLoadingScreen, 800);
+          setTimeout(hideLoadingScreen, 300);
         });
 
-        // Fallback: hide after 2 seconds no matter what
-        setTimeout(hideLoadingScreen, 2000);
+        // Fallback: hide after 1 second no matter what
+        setTimeout(hideLoadingScreen, 1000);
       });
     </script>
   </body>
