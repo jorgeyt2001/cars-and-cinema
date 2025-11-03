@@ -22,7 +22,7 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
     />
     <title>{title}</title>
     <script is:inline>
-      // Particles background animation
+      // 3D STARFIELD PARTICLES - ULTRA FUTURISTIC (TikTok Style)
       window.addEventListener('DOMContentLoaded', () => {
         const canvas = document.getElementById('particles');
         if (!canvas) return;
@@ -32,64 +32,131 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
         canvas.height = window.innerHeight;
 
         const particles = [];
-        const particleCount = 100;
+        const particleCount = 200; // More particles for denser effect
+        let centerX = canvas.width / 2;
+        let centerY = canvas.height / 2;
+        const maxDepth = 2000;
 
-        class Particle {
+        // Mouse interaction
+        let mouseX = centerX;
+        let mouseY = centerY;
+        let targetX = centerX;
+        let targetY = centerY;
+
+        canvas.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+          mouseX = centerX;
+          mouseY = centerY;
+        });
+
+        class Particle3D {
           constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.2;
+            this.reset();
+          }
+
+          reset() {
+            // Random position in 3D space
+            this.x = (Math.random() - 0.5) * 2000;
+            this.y = (Math.random() - 0.5) * 2000;
+            this.z = Math.random() * maxDepth; // Depth
+
+            // Speed increases as particles get closer
+            this.speed = 2 + Math.random() * 3;
+
+            // Color variation - golden to white
+            this.hue = 45 + Math.random() * 15; // 45-60 (golden range)
+            this.brightness = 50 + Math.random() * 50;
+
+            // Trail effect
+            this.prevX = 0;
+            this.prevY = 0;
           }
 
           update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
+            // Move towards viewer (decrease z)
+            this.z -= this.speed;
 
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
+            // Reset when particle passes viewer
+            if (this.z <= 0) {
+              this.reset();
+              this.z = maxDepth;
+            }
           }
 
           draw() {
-            ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+            // Project 3D to 2D
+            const focalLength = 300;
+            const scale = focalLength / this.z;
+
+            const x2d = centerX + this.x * scale;
+            const y2d = centerY + this.y * scale;
+
+            // Size based on depth (closer = bigger)
+            const size = (1 - this.z / maxDepth) * 3 + 0.5;
+
+            // Opacity based on depth
+            const opacity = (1 - this.z / maxDepth) * 0.8 + 0.2;
+
+            // Draw motion trail for speed effect
+            if (this.prevX && this.prevY) {
+              const gradient = ctx.createLinearGradient(this.prevX, this.prevY, x2d, y2d);
+              gradient.addColorStop(0, `hsla(${this.hue}, 100%, ${this.brightness}%, 0)`);
+              gradient.addColorStop(1, `hsla(${this.hue}, 100%, ${this.brightness}%, ${opacity * 0.5})`);
+
+              ctx.strokeStyle = gradient;
+              ctx.lineWidth = size * 0.5;
+              ctx.beginPath();
+              ctx.moveTo(this.prevX, this.prevY);
+              ctx.lineTo(x2d, y2d);
+              ctx.stroke();
+            }
+
+            // Draw particle
+            const gradient = ctx.createRadialGradient(x2d, y2d, 0, x2d, y2d, size * 2);
+            gradient.addColorStop(0, `hsla(${this.hue}, 100%, ${this.brightness}%, ${opacity})`);
+            gradient.addColorStop(0.5, `hsla(${this.hue}, 100%, ${this.brightness}%, ${opacity * 0.5})`);
+            gradient.addColorStop(1, `hsla(${this.hue}, 100%, ${this.brightness}%, 0)`);
+
+            ctx.fillStyle = gradient;
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.arc(x2d, y2d, size * 2, 0, Math.PI * 2);
             ctx.fill();
+
+            // Store previous position for trail
+            this.prevX = x2d;
+            this.prevY = y2d;
           }
         }
 
+        // Create particles
         for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
+          particles.push(new Particle3D());
         }
 
+        // Animation loop
         function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Smooth mouse follow
+          targetX += (mouseX - targetX) * 0.05;
+          targetY += (mouseY - targetY) * 0.05;
+
+          // Update center based on mouse (parallax effect)
+          centerX = canvas.width / 2 + (targetX - canvas.width / 2) * 0.15;
+          centerY = canvas.height / 2 + (targetY - canvas.height / 2) * 0.15;
+
+          // Fade effect for trails (instead of clearRect)
+          ctx.fillStyle = 'rgba(10, 10, 10, 0.15)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // Sort particles by z-depth (far to near) for proper layering
+          particles.sort((a, b) => b.z - a.z);
 
           particles.forEach(particle => {
             particle.update();
             particle.draw();
-          });
-
-          // Draw connections
-          particles.forEach((particleA, indexA) => {
-            particles.slice(indexA + 1).forEach(particleB => {
-              const dx = particleA.x - particleB.x;
-              const dy = particleA.y - particleB.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < 100) {
-                ctx.strokeStyle = `rgba(212, 175, 55, ${0.2 * (1 - distance / 100)})`;
-                ctx.lineWidth = 0.5;
-                ctx.beginPath();
-                ctx.moveTo(particleA.x, particleA.y);
-                ctx.lineTo(particleB.x, particleB.y);
-                ctx.stroke();
-              }
-            });
           });
 
           requestAnimationFrame(animate);
@@ -100,6 +167,12 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
         window.addEventListener('resize', () => {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
+          centerX = canvas.width / 2;
+          centerY = canvas.height / 2;
+          mouseX = centerX;
+          mouseY = centerY;
+          targetX = centerX;
+          targetY = centerY;
         });
 
         // Scroll reveal animations
@@ -175,7 +248,7 @@ const { title, description = "Alquiler de coches de lujo exclusivos - Cars & Cin
       </div>
     </div>
 
-    <canvas id="particles" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+    <canvas id="particles" class="fixed inset-0 z-0" style="opacity: 0.6;"></canvas>
     <div class="relative z-10 w-full">
       <slot />
     </div>
