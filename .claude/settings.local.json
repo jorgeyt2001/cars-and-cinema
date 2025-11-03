@@ -12,7 +12,12 @@
       "Bash(ssh:*)",
       "Bash(npx:*)",
       "Bash(C:UsersorantAppDataLocalnpm-cache_npx8a26fc3a61fe4212node_modulescloudflaredbincloudflared.exe tunnel --url http://localhost:4321)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Cars & Cinema - Luxury car rental website\n\n- Complete Astro website with modern futuristic design\n- Glassmorphism and neon effects\n- Fully responsive (mobile, tablet, desktop)\n- Components: Hero, Fleet, Services, Gallery, About, Testimonials, Booking, FAQ, Footer\n- Custom cursor, particle background, 3D card effects\n- Optimized form inputs with proper styling\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
