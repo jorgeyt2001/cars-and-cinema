@@ -17,7 +17,9 @@
       "Bash(git config:*)",
       "Bash(git commit:*)",
       "Bash(git remote add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(echo:*)",
+      "Bash(\"C:\\Users\\orant\\Desktop\\pagina-web-astro-alquiler\\src\\styles\\global.css\")"
     ],
     "deny": [],
     "ask": []
